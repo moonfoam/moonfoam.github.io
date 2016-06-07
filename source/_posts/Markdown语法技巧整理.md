@@ -15,6 +15,8 @@
 - Setext Style
 > ![](Markdown语法技巧整理/1-1.png)
 
+<!-- more -->
+
 - Atx Style:句首加#，注意#后的空格
 > ![](Markdown语法技巧整理/1-2.png)
 
