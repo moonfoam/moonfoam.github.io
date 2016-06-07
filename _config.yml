@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/moonfoam/moonfoam.github.io/
+url: https://github.com/moonfoam/moonfoam.github.io/tree/master
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -68,10 +68,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
+- type: git
+  repo: https://github.com/moonfoam/moonfoam.github.io.git
+  branch: master
 - type: heroku
   repo: https://git.heroku.com/wangchi.git
   message: hexo on my heroku
-
-- type: git
-  repository: https://github.com/moonfoam/moonfoam.github.io.git
-  branch: master
