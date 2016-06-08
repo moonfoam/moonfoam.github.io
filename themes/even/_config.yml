@@ -1,0 +1,43 @@
+# navbar
+menu:
+  Home: /
+  Archives: /archives/
+  Tags: /tags/
+  About: /about/
+
+# site icon
+favicon: /favicon.ico
+
+# sidebar
+## display: post / always / hide / remove
+sidebar:
+  display: hide
+
+# comments
+comments:
+  post: true
+  about: true
+
+## Friends Link
+friends:
+#  Yzzting: http://www.yzz1995.cn
+
+# Analytics
+## Google Analytics
+google_analytics: UA-78680326-1
+
+# Comments
+## Duoshuo
+# duoshuo_shortname: ahonn
+## Disqus
+disqus_shortname: wangchi
+
+# Social links
+social:
+  email: wangchi1995@gmail.com
+  github: https://github.com/moonfoam
+  # twitter:
+  # facebook:
+  # weibo: 
+  # zhihu: 
+  rss: /atom.xml
