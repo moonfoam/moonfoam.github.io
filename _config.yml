@@ -72,9 +72,9 @@ deploy:
   repo: git@github.com:moonfoam/moonfoam.github.io.git
   #https://github.com/moonfoam/moonfoam.github.io.git
   branch: master
-- type: heroku
-  repo: https://git.heroku.com/wangchi.git
-  message: hexo on my heroku
+#- type: heroku
+#  repo: https://git.heroku.com/wangchi.git
+#  message: hexo on my heroku
 
 # sitemap
 baidusitemap:
