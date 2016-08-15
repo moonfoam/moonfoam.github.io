@@ -35,6 +35,7 @@ menu:
   tags: /tags
   tasks: /tasks
   about: /about
+  bookmarks: /bookmarks
   #commonweal: /404.html
 
 
@@ -53,6 +54,7 @@ menu_icons:
   archives: archive
   commonweal: heartbeat
   tasks: tasks
+  bookmarks: bookmark
 
 
 
