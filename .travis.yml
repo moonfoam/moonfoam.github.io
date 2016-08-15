@@ -9,7 +9,8 @@ before_install:
 - npm install -g hexo
 - npm install -g hexo-cli
 - openssl aes-256-cbc -K $encrypted_32e1168b8f45_key -iv $encrypted_32e1168b8f45_iv
-  -in .travis/id_rsa_blog.enc -out .travis/id_rsa_blog -d
+  -in .travis/id_rsa_blog.enc -out ~/.ssh/id_rsa -d
+#  -in .travis/id_rsa_blog.enc -out .travis/id_rsa_blog -d
 # 设置id_rsa文件权限
 - chmod 600 ~/.ssh/id_rsa
 # 添加ssh密钥
