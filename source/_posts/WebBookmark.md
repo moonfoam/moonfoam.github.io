@@ -7,15 +7,17 @@ tags:
 categories: bookmarks
 ---
 
-> 个人网页收藏，实时更新,个人博客同步整理覆盖<br/><br/>
-> 名字前缀规则  
-> - **\***:个人博客整理
-> - **R**:他人博客或论坛
-> - **#**:原生工具站点或github源地址
+> 个人网页收藏，实时更新,个人博客同步整理覆盖
+>
+> > 名字前缀规则  
+> > - **\*** :个人博客整理
+> > - **R** :他人博客或论坛
+> > - **#** :原生工具站点或github源地址
+<!-- more -->
 
 # Code
-# Haskell
-    - [# learnhaskell](https://github.com/bitemyapp/learnhaskell)
+## Haskell
+- [# learnhaskell](https://github.com/bitemyapp/learnhaskell)
 
 # AI
 ## Machine Learning
@@ -25,6 +27,10 @@ categories: bookmarks
     - [# Scikit-learn](http://scikit-learn.org/)
 - Project
     - [# Tianqi Chen](http://homes.cs.washington.edu/~tqchen/)
+
+## Deep Learning
+- Course
+    - [# Tensorflow 中文Wiki](http://wiki.jikexueyuan.com/project/tensorflow-zh/)
 
 # Write
 ## Tool
@@ -61,7 +67,6 @@ categories: bookmarks
 # Linux
 ## Software
 - [# winetricks-zh QQ and more](https://github.com/hillwoodroc/winetricks-zh)
-- 
 
 ## Arch
 
@@ -92,6 +97,6 @@ categories: bookmarks
 - VPN
     - [# PPTP-Ubuntu&Debian](https://github.com/viljoviitanen/setup-simple-pptp-vpn)
 
-## Presentation
+# Presentation
 - [# impress.js](https://github.com/impress/impress.js)
     - [R Impress.js制作](https://segmentfault.com/a/1190000002677883)
