@@ -19,7 +19,7 @@ Hexo之类的静态博客相对与类WP的动态博客而言无疑有诸多优�
 > 参考自：
 > - <http://www.jianshu.com/p/7f05b452fd3a>
 >
-> 注：Windows使用该方法在加密处可能会有问题(长度问题)，可采用[此博客](- http://www.jianshu.com/p/fff7b3384f46)方法解决，Mac和Linux无碍
+> 注：Windows使用该方法在加密处可能会有问题(长度问题)，可采用[此博客]( http://www.jianshu.com/p/fff7b3384f46)方法解决，Mac和Linux无碍
 
 
 ---
@@ -39,19 +39,22 @@ cd ~/.ssh
 # 生成密钥，后面邮箱换成自己的邮箱
 ssh-keygen -t rsa -C   "wangchi1995@gmail.com"
 ```
-输入以上命令后回车，显示```Enter file in which to save the key (/home/wangchi/.ssh/id_rsa):```时(第一个问题) 写入**要保存的路径及文件名** ,注意不要写全局密钥(如~/.ssh/id_rsa)，其余一路回车就行。<br/>
+输入以上命令后回车，显示**Enter file in which to save the key (/home/wangchi/.ssh/id_rsa):** 时(第一个问题) 写入**要保存的路径及文件名** ,注意不要写全局密钥(如~/.ssh/id_rsa)，其余一路回车就行。<br/>
 过程如下图：<br/>
-<img src="Hexo自动部署-TravisCI-Github/create_ssh.png" width = "500" alt="create_ssh" align=center /><br/>
-密钥生成成功
+<img src="Hexo自动部署-TravisCI-Github/create_ssh.png" width = "700" alt="create_ssh" align=center /><br/>
+<p align=center>密钥生成成功</p>
 
 ### 添加ssh到github
 登录到github,进入自己的github.io项目 <br/>
-<img src="Hexo自动部署-TravisCI-Github/github1.png" width = "500" alt="create_ssh" align=center /><br/>
-然后点击```Settings``` -> 左侧```Deplog Keys``` -> ```Add deploy key```,```Title```随意写，```Key```写刚刚生成的公钥内容(如我的公钥内容在```~/.ssh/id_rsa_blog.pub```文件中)<br/>
-<img src="Hexo自动部署-TravisCI-Github/github2.png" width = "500" alt="create_ssh" align=center /><br/>
-然后勾选```Allow write access```赋予可写权限后点击最下面```Add key```按钮即可
+<img src="Hexo自动部署-TravisCI-Github/github1.png" width = "700" alt="create_ssh" align=center /><br/>
+然后点击**Settings** -> 左侧**Deplog Keys** -> **Add deploy key** , **Title** 随意写，**Key** 写刚刚生成的公钥内容(如我的公钥内容在**~/.ssh/id_rsa_blog.pub**文件中)<br/>
+<img src="Hexo自动部署-TravisCI-Github/github2.png" width = "700" alt="create_ssh" align=center /><br/>
+然后勾选**Allow write access**赋予可写权限后点击最下面**Add key**按钮即可
 
 ### 编辑配置信息
+
+> 这个随意，反正我全部部署完后直接把自己电脑上的**id_rsa_blog**删了
+
 用编辑器打开config文件，添加如下信息：
 ```
 # github
@@ -70,7 +73,7 @@ Host github.com
 ## 配置Travis
 ### 接入Travis CI
 打开[Travis CI](https://travis-ci.org/)网站，使用github账号登录<br/>
-将鼠标放在右上角的用户名上，点击```Account```选项，会显示github的项目。<br/>
+将鼠标放在右上角的用户名上，点击**Account**选项，会显示github的项目。<br/>
 找到博客项目(xxx/xxx.github.io)，点击前面带有 **X** 符号的按钮，开启travis支持。<br/>
 <img src="Hexo自动部署-TravisCI-Github/travis1.png" width = "500" alt="create_ssh" align=center /><br/>
 然后点击前面按钮边上的**设置小齿轮**，设置成如下样子就行了<br/>
@@ -185,7 +188,11 @@ script:
 - hexo clean && hexo g -d
 ```
 ### 编辑Hexo配置
-由于我以前编辑过，略过，格式如下。需要注意的是repo处要填**SSH key**地址(即git@github.com:xxxxx),branch处填要发布的分支<br/>
+由于我以前编辑过，略过，格式如下。<br/>
+需要注意的是:
+  - repo处要填**SSH key**地址(即git@github.com:xxxxx)
+  - branch处填要发布的分支
+
 ```
 deploy:
 - type: git
@@ -194,6 +201,6 @@ deploy:
 ```
 
 ## 测试
-push本地的代码至远程仓库之后，在https://travis-ci.org后台查看相关情况<br/>
+push本地的代码至远程仓库之后，在[Travis CI](https://travis-ci.org)后台查看相关情况<br/>
 如下图所示即成功部署Hexo:<br>
-<img src="Hexo自动部署-TravisCI-Github/test.png" width = "500" alt="create_ssh" align=center /><br/>
+<img src="Hexo自动部署-TravisCI-Github/test.png" width = "700" alt="create_ssh" align=center /><br/>
