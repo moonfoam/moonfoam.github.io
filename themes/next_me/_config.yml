@@ -35,7 +35,7 @@ menu:
   tags: /tags
   tasks: /tasks
   about: /about
-  bookmarks: /bookmarks
+  bookmarks: /categories/bookmarks
   #commonweal: /404.html
 
 
@@ -241,7 +241,7 @@ mathjax:
 
 
 # Swiftype Search API Key
-swiftype_key: UzFooK9YxuUgzk_pyssG
+swiftype_key: -BfjAyMEU5-W4WGmjRWX
 
 # Baidu Analytics ID
 #baidu_analytics:
