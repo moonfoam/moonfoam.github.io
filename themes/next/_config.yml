@@ -64,8 +64,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
@@ -147,7 +147,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /images/avatar.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -250,7 +250,7 @@ swiftype_key: -BfjAyMEU5-W4WGmjRWX
 duoshuo_shortname: wangchi
 
 # Disqus
-disqus_shortname: moonfoam
+# disqus_shortname: moonfoam
 
 # Baidu Share
 # Available value:
@@ -301,7 +301,9 @@ facebook_sdk:
 # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
 facebook_comments_plugin:
   enable: false
-  num_of_posts: 10
+  num_of_posts: 10  # min posts num is 1
+  width: 100%       # default width is 550px
+  scheme: light     # default scheme is light (light or dark)
 
 
 # Show number of visitors to each article.
