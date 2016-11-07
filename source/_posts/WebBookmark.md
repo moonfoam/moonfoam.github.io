@@ -22,28 +22,28 @@ categories: bookmarks
 # AI
 ## Machine Learning
 - Course
-    - [# stanford cs229](http://cs229.stanford.edu/materials.html)
+  - [# stanford cs229](http://cs229.stanford.edu/materials.html)
 - Tool
-    - [# Scikit-learn](http://scikit-learn.org/)
+  - [# Scikit-learn](http://scikit-learn.org/)
 - Project
-    - [# Tianqi Chen](http://homes.cs.washington.edu/~tqchen/)
+  - [# Tianqi Chen](http://homes.cs.washington.edu/~tqchen/)
 
 ## Deep Learning
 - Course
-    - [# Tensorflow 中文Wiki](http://wiki.jikexueyuan.com/project/tensorflow-zh/)
+  - [# Tensorflow 中文Wiki](http://wiki.jikexueyuan.com/project/tensorflow-zh/)
 
 # Write
 ## Tool
 ### Atom
 - [# 中文Wiki](http://wiki.jikexueyuan.com/project/atom/)
 - Atom配置自动备份还原
-    - [# sync-settings](https://atom.io/packages/sync-settings)
-    - [R 教程](http://www.07net01.com/2015/08/893825.html)
+  - [# sync-settings](https://atom.io/packages/sync-settings)
+  - [R 教程](http://www.07net01.com/2015/08/893825.html)
 
 ### Vim
 - 配置
 - 技巧
-    - [# Interactive Vim tutorial](http://www.openvim.com/)
+  - [# Interactive Vim tutorial](http://www.openvim.com/)
 
 ## Language
 ### MarkDown
@@ -55,8 +55,8 @@ categories: bookmarks
 
 ## 技巧
 - 版本回滚
-    - [R 参考1](http://www.fwolf.com/blog/post/441)
-    - [R 参考2](http://ruby-china.org/topics/11637)
+  - [R 参考1](http://www.fwolf.com/blog/post/441)
+  - [R 参考2](http://ruby-china.org/topics/11637)
 - [R GIT更新fork出来的代码](http://blog.sina.com.cn/s/blog_411fed0c0102vhlb.html)
 - [R Pull Request的正确打开方式](http://blog.csdn.net/zhangdaiscott/article/details/17438153)
 - [# Gihub项目可视化展现](http://codeology.braintreepayments.com/featured)
@@ -90,13 +90,33 @@ categories: bookmarks
 
 ## 梯子
 - ShadowSocks
-    - [R 搭建环境教程](https://blog.phpgao.com/shadowsocks_on_linux.html)
-    - [R 使用supervisor托管shadowsocks](https://blog.phpgao.com/supervisor_shadowsocks.html)
-    - [R 单端口修改成多端口随机](http://tieba.baidu.com/p/3733566612)
-    - [R 利用proxychains在终端使用socks5代理-Linux](http://www.tuicool.com/articles/rUNFF3)
+  - [R 搭建环境教程](https://blog.phpgao.com/shadowsocks_on_linux.html)
+  - [R 使用supervisor托管shadowsocks](https://blog.phpgao.com/supervisor_shadowsocks.html)
+  - [R 单端口修改成多端口随机](http://tieba.baidu.com/p/3733566612)
+  - [R 利用proxychains在终端使用socks5代理-Linux](http://www.tuicool.com/articles/rUNFF3)
 - VPN
-    - [# PPTP-Ubuntu&Debian](https://github.com/viljoviitanen/setup-simple-pptp-vpn)
+  - [# PPTP-Ubuntu&Debian](https://github.com/viljoviitanen/setup-simple-pptp-vpn)
 
 # Presentation
-- [# impress.js](https://github.com/impress/impress.js)
+- 载体
+  - [# impress.js](https://github.com/impress/impress.js)
     - [R Impress.js制作](https://segmentfault.com/a/1190000002677883)
+  - [nodePPT](https://github.com/ksky521/nodePPT)
+- 元素制作
+  - 图表
+    - 数据展示
+      - [# highcharts](http://www.highcharts.com/)
+      - [# infogr.am](https://infogr.am/)
+    - 流程图
+      - [# ProcessOn](https://processon.com/)
+  - 字体
+    - [# 造字工房](http://www.makefont.com/)
+  - 符号
+    - [# Font Awesome](http://fontawesome.io/)
+# API
+- 地图
+  - [# unfolding ](http://unfoldingmaps.org/tutorials/mapprovider-and-tiles.html)
+
+# Tool
+- 数论
+  - [# oeis寻找数列规律](https://oeis.org/)
