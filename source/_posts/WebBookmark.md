@@ -105,8 +105,8 @@ categories: bookmarks
 - 元素制作
   - 图表
     - 数据展示
-      - [# highcharts](http://www.highcharts.com/)
       - [# infogr.am](https://infogr.am/)
+      - [# highcharts](http://www.highcharts.com/)
     - 流程图
       - [# ProcessOn](https://processon.com/)
   - 字体
