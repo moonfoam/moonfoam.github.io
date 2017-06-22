@@ -54,7 +54,7 @@ menu:
   about: /about
   bookmarks: /categories/bookmarks
   #sitemap: /sitemap.xml
-  #commonweal: /404.html
+  commonweal: /404.html
 
 
 # Enable/Disable menu icons.
