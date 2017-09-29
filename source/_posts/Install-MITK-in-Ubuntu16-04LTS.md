@@ -13,7 +13,7 @@ categories:
 ---
 
 # 引言
-毕设的项目需使用[MITK\(The Medical Imaging Interaction Toolkit\)](http://www.mitk.org/)套件来进行医学图像处理，因此开始了MITK的踩坑计划，国内外网上的安装贴都无比的少，经过两天的折腾终于把MITK编译成功了！作文以记。  
+毕设的项目需使用[MITK\(The Medical Imaging Interaction Toolkit\)](http://www.mitk.org/)套件来进行医学图像处理，因此开始了MITK的踩坑计划，国内外网上的安装贴都无比的少，经过两天的折腾终于把MITK编译成功了！作文以记。
 注：本文使用的MITK为2016.11德国版
 <!-- more -->
 
@@ -21,8 +21,8 @@ categories:
 ## Ubuntu16.04LTS
 [支持的平台](http://docs.mitk.org/2016.11/SupportedPlatformsPage.html)，Linux系的官网支持列表如下：
 
-| Platform                   | Compilers                                          |
-|----------------------------|:---------------------------------------------------|
+|          Platform          | Compilers                                          |
+|:--------------------------:|:---------------------------------------------------|
 | Ubuntu Linux 14.04 \(x64\) | GNU 4.9 as provided by ppa:ubuntu-toolchain-r/test |
 | Ubuntu Linux 16.04 \(x64\) | GNU 4.9                                            |
 
@@ -31,9 +31,9 @@ categories:
 ## 所需软件
 - [MITK2016.11](http://docs.mitk.org/2016.11/)，下载点[此处](http://www.mitk.org/download/releases/MITK-2016.11/MITK-2016.11-src.tar.gz)
 - QT5.7.1，下载点[此处](http://download.qt.io/archive/qt/5.7/5.7.1/qt-opensource-linux-x64-5.7.1.run)
-> // 加可写权限  
-> chmod +x ./qt-opensource-linux-x64-5.7.1.run  
-> // 图形化安装  
+> // 加可写权限
+> chmod +x ./qt-opensource-linux-x64-5.7.1.run
+> // 图形化安装
 > sudo ./qt-opensource-linux-x64-5.7.1.run
 - Cmake3.7.2，下载点[此处](https://cmake.org/files/v3.7/cmake-3.7.2-Linux-x86_64.tar.gz)
 > 解压后打开*bin*文件夹下的**cmake-gui**即可
@@ -41,8 +41,8 @@ categories:
 # 编译安装
 1. 解压MITK-2016.11-src.tar.gz
 2. 新建一个文件夹*Toolkit*，把解压完的文件夹放进去，再新建一个文件夹*MITK-2016.11-src-bin*用以存放编译完的二进制文件，大致目录如下
-> Tookit    
-> ├─ MITK-2016.11-src  
+> Tookit
+> ├─ MITK-2016.11-src
 > └─ MITK-2016.11-src-bin
 3. 打开Cmake-gui或者命令行ccmake生成makefile
 <img src="Install-MITK-in-Ubuntu16-04LTS/cmake.png" width = "700" alt="create_ssh" align=center /><br/>
@@ -54,7 +54,7 @@ categories:
   5. 再点**Configure**到无错误且无红色为止(否则安装缺少的包)
   6. 点击下方**Generate**即可
 4. 打开终端，进入*MITK-2016.11-src-bin*文件夹
-> make  
+> make
 > // 如果多核可以使用**make -j6**使用多核编译加快编译速度
 5. 见到如下界面即编译成功
 <img src="Install-MITK-in-Ubuntu16-04LTS/make.png" width = "700" alt="create_ssh" align=center /><br/>
