@@ -65,7 +65,7 @@ menu:
   tasks: /tasks/ || tasks
   #schedule: /schedule/ || calendar
   about: /about/ || user
-  bookmarks: /categories/bookmarks/ || bookmark
+  bookmarks: /categories/Bookmarks/ || bookmark
   #sitemap: /sitemap.xml/ || sitemap
 #  commonweal: /404/ || heartbeat
 

@@ -4,7 +4,7 @@ comments: true
 date: 2016-08-15 19:22:46
 updated: 2016-08-15 19:22:46
 tags:
-categories: bookmarks
+categories: Bookmarks
 ---
 
 > 个人网页收藏，实时更新,个人博客同步整理覆盖

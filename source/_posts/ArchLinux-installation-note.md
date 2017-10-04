@@ -4,7 +4,9 @@ comments: true
 date: 2017-10-04 19:52:16
 updated: 2017-10-04 19:52:16
 tags:
+    - ArchLinux
 categories:
+    - Linux
 ---
 
 # 引言

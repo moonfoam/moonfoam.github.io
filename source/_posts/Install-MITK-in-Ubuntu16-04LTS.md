@@ -9,7 +9,7 @@ tags:
   - 图像处理
   - 医学
 categories:
-  - Image Processing
+  - Linux
 ---
 
 # 引言
