@@ -9,17 +9,20 @@ categories: Bookmarks
 
 > 个人网页收藏，实时更新,个人博客同步整理覆盖
 >
-> > 名字前缀规则  
+> > 名字前缀规则
 > > - **\*** :个人博客整理
 > > - **R** :他人博客或论坛
 > > - **#** :原生工具站点或github源地址
 <!-- more -->
 
 # Code
+---
 ## Haskell
 - [# learnhaskell](https://github.com/bitemyapp/learnhaskell)
 
 # AI
+---
+
 ## Machine Learning
 - Course
     - [# stanford cs229](http://cs229.stanford.edu/materials.html)
@@ -30,9 +33,18 @@ categories: Bookmarks
 
 ## Deep Learning
 - Course
+    - [Deeplearning.ai](https://www.deeplearning.ai)
+      - [# 网易云课堂](http://mooc.study.163.com/smartSpec/detail/1001319001.htm)
+      - [# Cousera](https://www.coursera.org/specializations/deep-learning)
     - [# Tensorflow 中文Wiki](http://wiki.jikexueyuan.com/project/tensorflow-zh/)
+- Tool
+  - [# TensorFlow](https://www.tensorflow.org)
+  - [# PyTorch](http://pytorch.org)
+  - [# Caffe](http://caffe.berkeleyvision.org)
 
 # Write
+---
+
 ## Tool
 ### Atom
 - [# 中文Wiki](http://wiki.jikexueyuan.com/project/atom/)
@@ -51,6 +63,8 @@ categories: Bookmarks
 - [# StackEdit书写工具](https://stackedit.io/editor)
 
 # Github
+---
+
 ## 配置
 
 ## 技巧
@@ -65,10 +79,13 @@ categories: Bookmarks
 - [# Travis CI](https://travis-ci.org)
 
 # Linux
+---
+
 ## Software
 - [# winetricks-zh](https://github.com/hillwoodroc/winetricks-zh)
 
 ## Arch
+- [\* ArchLinux安装（Plasma+Nvidia Driver）](http://moonfoam.github.io/2017/10/04/ArchLinux-installation-note/)
 
 # Blog
 ## HEXO
@@ -98,6 +115,8 @@ categories: Bookmarks
     - [# PPTP-Ubuntu&Debian](https://github.com/viljoviitanen/setup-simple-pptp-vpn)
 
 # Presentation
+---
+
 - 载体
     - [# impress.js](https://github.com/impress/impress.js)
         - [R Impress.js制作](https://segmentfault.com/a/1190000002677883)
@@ -105,19 +124,26 @@ categories: Bookmarks
 - 元素制作
     - 图表
         - 数据展示
+            - [# ECharts](http://echarts.baidu.com)
             - [# infogr.am](https://infogr.am/)
             - [# highcharts](http://www.highcharts.com/)
         - 流程图
             - [# ProcessOn](https://processon.com/)
     - 字体
         - [# 造字工房](http://www.makefont.com/)
-    - 符号
+    - 图标
+        - [# Iconfont](http://www.iconfont.cn)
         - [# Font Awesome](http://fontawesome.io/)
 
+
 # API
+---
+
 - 地图
     - [# unfolding ](http://unfoldingmaps.org/tutorials/mapprovider-and-tiles.html)
 
 # Tool
+---
+
 - 数论
     - [# oeis寻找数列规律](https://oeis.org/)
