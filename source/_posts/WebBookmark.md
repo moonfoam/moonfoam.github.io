@@ -114,28 +114,6 @@ categories: Bookmarks
 - VPN
     - [# PPTP-Ubuntu&Debian](https://github.com/viljoviitanen/setup-simple-pptp-vpn)
 
-# Presentation
----
-
-- 载体
-    - [# impress.js](https://github.com/impress/impress.js)
-        - [R Impress.js制作](https://segmentfault.com/a/1190000002677883)
-    - [nodePPT](https://github.com/ksky521/nodePPT)
-- 元素制作
-    - 图表
-        - 数据展示
-            - [# ECharts](http://echarts.baidu.com)
-            - [# infogr.am](https://infogr.am/)
-            - [# highcharts](http://www.highcharts.com/)
-        - 流程图
-            - [# ProcessOn](https://processon.com/)
-    - 字体
-        - [# 造字工房](http://www.makefont.com/)
-    - 图标
-        - [# Iconfont](http://www.iconfont.cn)
-        - [# Font Awesome](http://fontawesome.io/)
-
-
 # API
 ---
 
