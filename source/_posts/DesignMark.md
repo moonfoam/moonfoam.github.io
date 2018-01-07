@@ -32,11 +32,21 @@ categories: Bookmarks
     - 流程图
         - [# ProcessOn](https://processon.com/)
 - 设计素材
-    - [# Freepik](http://www.freepik.com)
+    - [# Freepik](http://www.freepik.com)pa
 
 # 灵感
 - [# lapa](https://www.lapa.ninja/)
 - [# Reeoo](http://reeoo.com/)
+
+# 摄影
+- [# uva](http://uva.co.uk)
+
+# 建筑
+- [# Bustler](http://bustler.net)
+- [# Archinect](https://archinect.com)
+- [# ThincDesign](http://www.thincdesign.com)
+- [# localprojects](http://localprojects.net)
+- [# designboom](https://www.designboom.com)
 
 # Presentation
 - [# impress.js](https://github.com/impress/impress.js)
