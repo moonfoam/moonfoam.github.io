@@ -1,29 +1,30 @@
 language: node_js
 node_js:
-- "6"  # nodejs的版本
+  - stable  # nodejs的版本
 branches:
   only:
-  - hexo  # 设置自动化部署的源码分支
+    - hexo  # 设置自动化部署的源码分支
 before_install:
-- export TZ='Asia/Shanghai'  # 设置时区
-- npm install -g hexo
-- npm install -g hexo-cli
-- openssl aes-256-cbc -K $encrypted_32e1168b8f45_key -iv $encrypted_32e1168b8f45_iv
-  -in .travis/id_rsa_blog.enc -out ~/.ssh/id_rsa -d
-#  -in .travis/id_rsa_blog.enc -out .travis/id_rsa_blog -d
-# 设置id_rsa文件权限
-- chmod 600 ~/.ssh/id_rsa
-# 添加ssh密钥
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-# 添加ssh配置文件
-- cp .travis/ssh_config ~/.ssh/config
-# 设置github账户信息
-- git config --global user.name "wangchi" #设置github用户名
-- git config --global user.email wangchi1995@gmail.com #设置github用户邮箱
+  - export TZ='Asia/Shanghai'  # 设置时区
+  - npm install -g hexo
+  - npm install -g hexo-cli
+  - openssl aes-256-cbc -K $encrypted_32e1168b8f45_key -iv $encrypted_32e1168b8f45_iv
+    -in .travis/id_rsa_blog.enc -out ~/.ssh/id_rsa -d
+  # 设置id_rsa文件权限
+  - chmod 600 ~/.ssh/id_rsa
+  - sed -i "s/git@/${CI_TOKEN}@/g" _config.yml #使用travisCI中配置的token替换掉_config.yml中对应的占位符
+  # 添加ssh密钥
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  # 添加ssh配置文件
+  - cp .travis/ssh_config ~/.ssh/config
+  # 设置github账户信息
+  - git config --global user.name "wangchi" #设置github用户名
+  - git config --global user.email wangchi1995@gmail.com #设置github用户邮箱
+
 # 安装依赖组件
 install:
-- npm install
+  - npm install
 # 执行的命令
 script:
-- hexo clean && hexo g -d
+  - hexo clean && hexo g -d
