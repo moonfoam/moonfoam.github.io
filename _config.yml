@@ -69,8 +69,8 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
-  repo: git@github.com:moonfoam/moonfoam.github.io.git
-  #https://github.com/moonfoam/moonfoam.github.io.git
+  # repo: git@github.com:moonfoam/moonfoam.github.io.git
+  repo: https://ic_token@github.com/moonfoam/moonfoam.github.io.git
   branch: master
 #- type: heroku
 #  repo: https://git.heroku.com/wangchi.git
