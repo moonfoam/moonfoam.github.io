@@ -28,5 +28,5 @@ after_success:
   # 设置github账户信息
   - git config --global user.name "wangchi" #设置github用户名
   - git config --global user.email wangchi1995@gmail.com #设置github用户邮箱
-  - sed -i "s/ci_token/${CI_TOKEN}/g" _config.yml #使用travisCI中配置的token替换掉_config.yml中对应的占位符
+  - sed -i "s/git@github.com:moonfoam/https:\/\/${CI_TOKEN}@github.com/g" _config.yml #使用travisCI中配置的token替换掉_config.yml中对应的占位符
   - hexo deploy
