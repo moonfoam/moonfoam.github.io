@@ -82,7 +82,7 @@ Every interaction is both precious and an opportunity to delight.
 Every interaction is both precious and an opportunity to delight.
 {% endblockquote %}
 
-### 居中引用 (Require NexT 0.4.5)
+<!-- ### 居中引用 (Require NexT 0.4.5)
 
 **简写**：cq
 
@@ -94,7 +94,7 @@ Something
 
 {% centerquote %}
 人的一切痛苦，本质上都是对自己的无能的愤怒。<br/><br/>**王小波**
-{% endcenterquote %}
+{% endcenterquote %} -->
 
 ## Code Block 代码块
 
