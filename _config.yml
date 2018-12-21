@@ -73,8 +73,8 @@ deploy:
   repo: git@github.com:moonfoam/moonfoam.github.io.git
   # repo: https://ci_token@github.com/moonfoam/moonfoam.github.io.git
   branch: master
-- type: baidu_url_submitter #百度主动推送
-- type: baidu_xz_url_submitter #百度熊掌号
+#- type: baidu_url_submitter #百度主动推送
+#- type: baidu_xz_url_submitter #百度熊掌号
 #- type: heroku
 #  repo: https://git.heroku.com/wangchi.git
 #  message: hexo on my heroku
