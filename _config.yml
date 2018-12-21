@@ -4,8 +4,9 @@
 
 # Site
 title: Super::wangchi
-subtitle:
+subtitle: 
 description:
+keywords: Super::wangchi,wangchi,moonfoam,AI,人工智能,机器学习,深度学习,计算机视觉,视觉传达,后端
 author: wangchi
 language: zh-CN
 timezone: Asia/Shanghai
@@ -72,13 +73,27 @@ deploy:
   repo: git@github.com:moonfoam/moonfoam.github.io.git
   # repo: https://ci_token@github.com/moonfoam/moonfoam.github.io.git
   branch: master
+- type: baidu_url_submitter #百度主动推送
+- type: baidu_xz_url_submitter #百度熊掌号
 #- type: heroku
 #  repo: https://git.heroku.com/wangchi.git
 #  message: hexo on my heroku
 
 # sitemap
+sitemap:
+  path: sitemap.xml
 baidusitemap:
-path: baidusitemap.xml
+  path: baidusitemap.xml
+
+# Baidu xzj
+#baidu_url_submit:
+#  count: 1000 ## 提交最新的一个链接
+#  host: wangchi.art ## 在百度站长平台中注册的域名
+#  token: xxxxx ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+#  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+#  xz_appid: 'xxxxxx' ## 你的熊掌号 appid
+#  xz_token: 'xxxxxx' ## 你的熊掌号 token
+#  xz_count: 10 ## 从所有的提交的数据当中选取最新的10条,该数量跟你的熊掌号而定
 
 # hexo admin
 admin:
