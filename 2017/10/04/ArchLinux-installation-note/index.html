@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-180x180-wt.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/simplelogo-32x32-wt.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/simplelogo-16x16-wt.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/simplelogo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
+
+  <meta name="description" content="&amp;#x5F15;&amp;#x8A00;Arch&amp;#x7B97;&amp;#x8D77;&amp;#x6765;&amp;#x5DF2;&amp;#x7ECF;&amp;#x7528;&amp;#x4E86;3&amp;#x5E74;&amp;#x591A;&amp;#x4E86;&amp;#xFF0C;&amp;#x662F;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x6700;&amp;#x4E45;&amp;#x7684;&amp;#x4E00;&amp;#x6B3E;Linux&amp;#x53D1;&amp;#x884">
+<meta name="keywords" content="ArchLinux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArchLinux 安装手记">
+<meta property="og:url" content="https://wangchi.art/2017/10/04/ArchLinux-installation-note/index.html">
+<meta property="og:site_name" content="Super::wangchi">
+<meta property="og:description" content="&amp;#x5F15;&amp;#x8A00;Arch&amp;#x7B97;&amp;#x8D77;&amp;#x6765;&amp;#x5DF2;&amp;#x7ECF;&amp;#x7528;&amp;#x4E86;3&amp;#x5E74;&amp;#x591A;&amp;#x4E86;&amp;#xFF0C;&amp;#x662F;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x6700;&amp;#x4E45;&amp;#x7684;&amp;#x4E00;&amp;#x6B3E;Linux&amp;#x53D1;&amp;#x884">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangchi.art/2017/10/04/ArchLinux-installation-note/arch.png">
+<meta property="og:updated_time" content="2017-10-04T11:52:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArchLinux 安装手记">
+<meta name="twitter:description" content="&amp;#x5F15;&amp;#x8A00;Arch&amp;#x7B97;&amp;#x8D77;&amp;#x6765;&amp;#x5DF2;&amp;#x7ECF;&amp;#x7528;&amp;#x4E86;3&amp;#x5E74;&amp;#x591A;&amp;#x4E86;&amp;#xFF0C;&amp;#x662F;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x6700;&amp;#x4E45;&amp;#x7684;&amp;#x4E00;&amp;#x6B3E;Linux&amp;#x53D1;&amp;#x884">
+<meta name="twitter:image" content="https://wangchi.art/2017/10/04/ArchLinux-installation-note/arch.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Super::wangchi" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangchi.art/2017/10/04/ArchLinux-installation-note/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ArchLinux 安装手记 | Super::wangchi</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Super::wangchi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tasks">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tasks/" rel="section"><i class="menu-item-icon fa fa-fw fa-tasks"></i> <br />计划</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-bookmarks">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/Bookmarks/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />书签</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangchi.art/2017/10/04/ArchLinux-installation-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangchi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Super::wangchi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ArchLinux 安装手记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-10-04 19:52:16" itemprop="dateCreated datePublished" datetime="2017-10-04T19:52:16+08:00">2017-10-04</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/04/ArchLinux-installation-note/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/10/04/ArchLinux-installation-note/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/10/04/ArchLinux-installation-note/" class="leancloud_visitors" data-flag-title="ArchLinux 安装手记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="&#x5F15;&#x8A00;"><a href="#&#x5F15;&#x8A00;" class="headerlink" title="&#x5F15;&#x8A00;"></a>&#x5F15;&#x8A00;</h1><p>Arch&#x7B97;&#x8D77;&#x6765;&#x5DF2;&#x7ECF;&#x7528;&#x4E86;3&#x5E74;&#x591A;&#x4E86;&#xFF0C;&#x662F;&#x6211;&#x4F7F;&#x7528;&#x6700;&#x4E45;&#x7684;&#x4E00;&#x6B3E;Linux&#x53D1;&#x884C;&#x7248;&#x3002;&#x73B0;&#x5728;&#x6362;&#x4E86;Mac&#xFF0C;Linux&#x4F7F;&#x7528;&#x9891;&#x7387;&#x5927;&#x5E45;&#x4E0B;&#x964D;&#xFF0C;&#x56E0;&#x6B64;&#x628A;Arch&#x73AF;&#x5883;&#x7684;&#x5B89;&#x88C5;&#x4EE5;&#x53CA;&#x914D;&#x7F6E;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#x3002;<br>//&#x81F3;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x811A;&#x672C;&#xFF0C;&#x56E0;&#x4E3A;&#x786C;&#x4EF6;&#x8001;&#x53D8;&#x554A;hhh&#x8FD8;&#x662F;&#x9488;&#x5BF9;&#x6027;&#x5B89;&#x88C5;&#x6BD5;&#x7ADF;&#x5B89;&#x5FC3;<br><a id="more"></a></p>
+<h1 id="&#x5B89;&#x88C5;&#x8BA1;&#x5212;"><a href="#&#x5B89;&#x88C5;&#x8BA1;&#x5212;" class="headerlink" title="&#x5B89;&#x88C5;&#x8BA1;&#x5212;"></a>&#x5B89;&#x88C5;&#x8BA1;&#x5212;</h1><h2 id="&#x5F53;&#x524D;&#x786C;&#x4EF6;"><a href="#&#x5F53;&#x524D;&#x786C;&#x4EF6;" class="headerlink" title="&#x5F53;&#x524D;&#x786C;&#x4EF6;"></a>&#x5F53;&#x524D;&#x786C;&#x4EF6;</h2><ul>
+<li>GPU Intel I7-7700</li>
+<li>GPU VSUS NVIDIA GTX1070</li>
+<li>&#x673A;&#x68B0;&#x786C;&#x76D8; WD10EZEX 1T</li>
+<li>&#x56FA;&#x6001;&#x786C;&#x76D8; PLEXTOR M7VC 256G</li>
+<li>&#x5185;&#x5B58; &#x6D77;&#x76D7;&#x8239;&#x590D;&#x4EC7;&#x8005;LPX DDR4 3000 16G</li>
+</ul>
+<h2 id="&#x786C;&#x76D8;&#x89C4;&#x5212;"><a href="#&#x786C;&#x76D8;&#x89C4;&#x5212;" class="headerlink" title="&#x786C;&#x76D8;&#x89C4;&#x5212;"></a>&#x786C;&#x76D8;&#x89C4;&#x5212;</h2><blockquote>
+<p>&#x7531;&#x4E8E;&#x4E3B;&#x8981;&#x6253;&#x7B97;&#x7528;Linux&#x8DD1;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5305;&#x542B;&#x5F88;&#x591A;&#x5C0F;&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;SSD&#x5168;&#x7528;&#x6765;&#x88C5;Linux&#x6765;&#x52A0;&#x901F;&#x6587;&#x4EF6;&#x5B58;&#x53D6;&#x3002;&#x673A;&#x68B0;&#x786C;&#x76D8;1T&#x4E00;&#x534A;&#x7528;&#x6765;&#x88C5;Windows&#xFF0C;&#x4E00;&#x534A;&#x7528;&#x6765;&#x505A;Linux&#x989D;&#x5916;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF08;&#x975E;<code>/home</code>&#xFF09;&#x3002;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">SSD</div><div class="line">&#x251C;&#x2500;&#x2500; /boot  1G</div><div class="line">&#x251C;&#x2500;&#x2500; /Swap 16G</div><div class="line">&#x2514;&#x2500;&#x2500; /  &#x5269;&#x4E0B;&#x5168;&#x90E8;&#xFF08;/home&#x4E0D;&#x5355;&#x72EC;&#x5206;&#x4E86;&#xFF09;</div><div class="line"></div><div class="line">&#x673A;&#x68B0;&#x786C;&#x76D8;</div><div class="line">&#x251C;&#x2500;&#x2500; Windows 512G</div><div class="line">&#x2514;&#x2500;&#x2500; Linux &#x5269;&#x4E0B;&#x5168;&#x90E8;&#xFF08;exfat&#xFF09;</div></pre></td></tr></table></figure>
+<h1 id="&#x524D;&#x671F;"><a href="#&#x524D;&#x671F;" class="headerlink" title="&#x524D;&#x671F;"></a>&#x524D;&#x671F;</h1><h2 id="&#x51C6;&#x5907;"><a href="#&#x51C6;&#x5907;" class="headerlink" title="&#x51C6;&#x5907;"></a>&#x51C6;&#x5907;</h2><ul>
+<li><strong>Arch&#x542F;&#x52A8;&#x76D8;&#x4E00;&#x679A;</strong> - &#x5728;&#x5B98;&#x7F51;&#x548C;&#x56FD;&#x5185;&#x955C;&#x50CF;&#x7AD9;&#x90FD;&#x80FD;&#x4E0B;&#xFF0C;&#x4E00;&#x822C;&#x51E0;&#x767E;MB</li>
+<li><strong>&#x7F51;&#x7EDC;&#x73AF;&#x5883;</strong> - &#x7531;&#x4E8E;Arch&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#xFF0C;&#x65B0;&#x7684;&#x7CFB;&#x7EDF;&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x76F4;&#x63A5;&#x4ECE;&#x7F51;&#x4E0A;&#x4E0B;&#x8F7D;&#x7684;&#xFF0C;&#x56E0;&#x800C;&#x9700;&#x8981;&#x76F8;&#x5E94;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#xFF08;&#x7F51;&#x7EBF;/WIFI&#xFF09;//&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#x672C;&#x5730;&#x5E93;</li>
+<li><a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank" rel="external"><strong>Arch Installation guide</strong></a> - &#x55EF;&#xFF0C;Arch&#x7684;&#x6587;&#x6863;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF01;</li>
+</ul>
+<h2 id="&#x5206;&#x533A;"><a href="#&#x5206;&#x533A;" class="headerlink" title="&#x5206;&#x533A;"></a>&#x5206;&#x533A;</h2><p>&#x4E00;&#x822C;&#x5206;<code>/Boot</code>&#x3001;<code>swap</code>&#x548C;<code>/</code>&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x5177;&#x6709;&#x5F3A;&#x8FEB;&#x6027;&#x6216;&#x8005;&#x53CC;&#x786C;&#x76D8;&#x7684;&#x8BDD;&#x53EF;&#x4EE5;&#x5206;&#x4E0B;<code>/home</code>&#x3002;MBR&#x4F7F;&#x7528;<em>fdisk</em>&#x6216;&#x8005;<em>cfdisk</em>&#xFF0C;GPT&#x4F7F;&#x7528;<em>gdisk</em>&#x6216;&#x8005;<em>cgdisk</em>&#x3002;</p>
+<p>&#x83B7;&#x53D6;&#x5404;&#x76D8;&#x533A;&#x4FE1;&#x606F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ lsblk</div></pre></td></tr></table></figure></p>
+<p>&#x5BF9;sda&#x76D8;&#x5206;&#x533A;&#xFF0C;&#x8BB0;&#x5F97;&#x7ED9;<code>/boot</code>&#x5206;&#x533A;&#x8BBE;<code>ESP</code>&#x7C7B;&#x578B;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cgdisk /dev/sda</div></pre></td></tr></table></figure></p>
+<p>&#x6B64;&#x65F6;&#x5206;&#x533A;&#x8868;&#x5982;&#x4E0B;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ lablk</div><div class="line">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</div><div class="line">sda      8:0    0   64G  0 disk</div><div class="line">&#x251C;&#x2500;sda1   8:1    0    1G  0 part</div><div class="line">&#x251C;&#x2500;sda2   8:2    0   16G  0 part</div><div class="line">&#x2514;&#x2500;sda3   8:3    0   221.5G  0 part</div></pre></td></tr></table></figure></p>
+<p>&#x521D;&#x59CB;&#x5316;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkfs.vfat /dev/sda1</div><div class="line">$ mkswap /dev/sda2</div><div class="line">$ mkfs.ext4 /dev/sda3</div></pre></td></tr></table></figure></p>
+<p>&#x6302;&#x8F7D;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mount /dev/sda3 /mnt</div><div class="line">$ swapon /dev/sda2</div><div class="line">$ mkdir -p /mnt/boot</div><div class="line">$ mount /dev/sda1 /mnt/boot</div></pre></td></tr></table></figure></p>
+<h1 id="&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;"><a href="#&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;"></a>&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;</h1><h2 id="&#x9009;&#x62E9;&#x955C;&#x50CF;&#x6E90;"><a href="#&#x9009;&#x62E9;&#x955C;&#x50CF;&#x6E90;" class="headerlink" title="&#x9009;&#x62E9;&#x955C;&#x50CF;&#x6E90;"></a>&#x9009;&#x62E9;&#x955C;&#x50CF;&#x6E90;</h2><p>&#x9009;&#x4E00;&#x4E2A;&#x770B;&#x7684;&#x987A;&#x773C;&#x7684;China&#x955C;&#x50CF;&#x653E;&#x524D;&#x9762;&#x5373;&#x53EF;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/pacman.d/mirrorlist</div></pre></td></tr></table></figure></p>
+<p>&#x5F3A;&#x5236;&#x66F4;&#x65B0;&#x6E90;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -Syy</div></pre></td></tr></table></figure></p>
+<h2 id="&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;"><a href="#&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;" class="headerlink" title="&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;"></a>&#x5B89;&#x88C5;&#x57FA;&#x7840;&#x5305;</h2><p>&#x6B64;&#x65F6;u&#x76D8;&#x542F;&#x52A8;&#x955C;&#x50CF;&#x4E3A;<code>/</code>,&#x5F85;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;&#x4E3A;<code>/mnt</code>&#xFF0C;&#x4F7F;&#x7528;<code>pacstrap</code>&#x547D;&#x4EE4;&#x5C06;&#x57FA;&#x7840;&#x7CFB;&#x7EDF;&#x88C5;&#x8FDB;<code>/mnt</code>&#x4E2D;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacstrap /mnt base</div></pre></td></tr></table></figure></p>
+<p>&#x6839;&#x636E;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5176;&#x4ED6;&#x5305;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacstrap /mnt base-devel vim zsh zsh-completions</div></pre></td></tr></table></figure></p>
+<h2 id="&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;"><a href="#&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;"></a>&#x914D;&#x7F6E;&#x7CFB;&#x7EDF;</h2><h3 id="&#x751F;&#x6210;fstab"><a href="#&#x751F;&#x6210;fstab" class="headerlink" title="&#x751F;&#x6210;fstab"></a>&#x751F;&#x6210;fstab</h3><p>&#x751F;&#x6210;<code>fstab</code>&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4EE5;&#x5B9A;&#x4E49;&#x786C;&#x76D8;&#x4FE1;&#x606F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</div></pre></td></tr></table></figure></p>
+<h3 id="&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;"><a href="#&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;"></a>&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;</h3><p>&#x4F7F;&#x7528;<code>arch-chroot</code>&#x8FDB;&#x5165;&#x7CFB;&#x7EDF;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ arch-chroot /mnt /bin/zsh</div></pre></td></tr></table></figure></p>
+<h3 id="&#x7F16;&#x8F91;&#x65F6;&#x533A;&#x4FE1;&#x606F;"><a href="#&#x7F16;&#x8F91;&#x65F6;&#x533A;&#x4FE1;&#x606F;" class="headerlink" title="&#x7F16;&#x8F91;&#x65F6;&#x533A;&#x4FE1;&#x606F;"></a>&#x7F16;&#x8F91;&#x65F6;&#x533A;&#x4FE1;&#x606F;</h3><p>&#x8BBE;&#x7F6E;&#x65F6;&#x533A;&#x5E76;&#x8BBE;&#x7F6E;&#x786C;&#x4EF6;&#x65F6;&#x949F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</div><div class="line">$ hwclock --systohc --utc</div><div class="line">$ tzselect</div></pre></td></tr></table></figure></p>
+<h3 id="&#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x73AF;&#x5883;"><a href="#&#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x73AF;&#x5883;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x73AF;&#x5883;"></a>&#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x73AF;&#x5883;</h3><p>&#x9009;&#x62E9;<code>/etc/locale.gen</code>&#x6587;&#x4EF6;&#x4E2D;&#x9700;&#x8981;&#x7684;&#x8BED;&#x8A00;&#x73AF;&#x5883;&#xFF0C;&#x53BB;&#x9664;&#x6CE8;&#x91CA;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/locale.gen</div></pre></td></tr></table></figure></p>
+<p>&#x6211;&#x4F7F;&#x7528;&#x7684;&#x662F;</p>
+<ul>
+<li>en_US.UTF-8 UTF-8</li>
+<li>zh_CN.UTF-8 UTF-8</li>
+<li>zh_TW.UTF-8 UTF-8</li>
+</ul>
+<p>&#x751F;&#x6210;&#x5B83;&#x4EEC;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ locale-gen</div></pre></td></tr></table></figure></p>
+<p>&#x5199;&#x5165;&#x9ED8;&#x8BA4;&#x8BED;&#x8A00;&#x914D;&#x7F6E;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> LANG=en_US.UTF-8 &gt; /etc/locale.conf</div></pre></td></tr></table></figure></p>
+<h3 id="&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x540D;"><a href="#&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x540D;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x540D;"></a>&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x540D;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> myhostname &gt; /etc/hostname</div><div class="line">$ <span class="built_in">echo</span> <span class="string">&apos;127.0.1.1	myhostname.localdomain myhostname&apos;</span> &gt;&gt; /etc/hosts</div></pre></td></tr></table></figure>
+<h3 id="&#x8BBE;&#x7F6E;root&#x5BC6;&#x7801;"><a href="#&#x8BBE;&#x7F6E;root&#x5BC6;&#x7801;" class="headerlink" title="&#x8BBE;&#x7F6E;root&#x5BC6;&#x7801;"></a>&#x8BBE;&#x7F6E;root&#x5BC6;&#x7801;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ passwd</div></pre></td></tr></table></figure>
+<h3 id="&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x5F15;&#x5BFC;"><a href="#&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x5F15;&#x5BFC;" class="headerlink" title="&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x5F15;&#x5BFC;"></a>&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x5F15;&#x5BFC;</h3><p>&#x5B89;&#x88C5;<code>Grub</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S grub efibootmgr os-prober</div></pre></td></tr></table></figure></p>
+<p>&#x5B89;&#x88C5;<code>Grub</code>&#x5F15;&#x5BFC;&#xFF08;<code>esp_mount</code>&#x4E00;&#x822C;&#x4E3A; <code>/boot</code>&#x6216;<code>/boot/EFI</code>&#xFF09;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grub-install --target=x86_64-efi --efi-directory=esp_mount --bootloader-id=grub</div></pre></td></tr></table></figure></p>
+<p>&#x4F7F;&#x7528;<code>os-prober</code>&#x81EA;&#x52A8;&#x914D;&#x7F6E;<code>grub.cfg</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</div></pre></td></tr></table></figure></p>
+<h3 id="&#x65B0;&#x5EFA;&#x7528;&#x6237;"><a href="#&#x65B0;&#x5EFA;&#x7528;&#x6237;" class="headerlink" title="&#x65B0;&#x5EFA;&#x7528;&#x6237;"></a>&#x65B0;&#x5EFA;&#x7528;&#x6237;</h3><p>&#x65B0;&#x5EFA;&#x7528;&#x6237;&#x5E76;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ useradd -m -g users -G wheel -s /bin/zsh username</div><div class="line">$ passwd username</div></pre></td></tr></table></figure></p>
+<p>[&#x53EF;&#x9009;]&#x7ED9;<code>wheel</code>&#x7EC4;<code>root</code>&#x6743;&#x9650;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/sudoers</div><div class="line">&#x53BB;&#x9664;&#x5176;&#x4E2D;<span class="string">&quot;%wheel ALL=(ALL) ALL&quot;</span>&#x884C;&#x6CE8;&#x91CA;&#x5373;&#x53EF;</div></pre></td></tr></table></figure></p>
+<h2 id="&#x684C;&#x9762;"><a href="#&#x684C;&#x9762;" class="headerlink" title="&#x684C;&#x9762;"></a>&#x684C;&#x9762;</h2><h3 id="xorg&#x6846;&#x67B6;"><a href="#xorg&#x6846;&#x67B6;" class="headerlink" title="xorg&#x6846;&#x67B6;"></a>xorg&#x6846;&#x67B6;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S xorg-xclock xterm xorg-utils xorg-xinit xorg-server</div></pre></td></tr></table></figure>
+<h3 id="&#x663E;&#x5361;&#x9A71;&#x52A8;&#xFF08;NVIDIA-GTX1070&#xFF09;"><a href="#&#x663E;&#x5361;&#x9A71;&#x52A8;&#xFF08;NVIDIA-GTX1070&#xFF09;" class="headerlink" title="&#x663E;&#x5361;&#x9A71;&#x52A8;&#xFF08;NVIDIA GTX1070&#xFF09;"></a>&#x663E;&#x5361;&#x9A71;&#x52A8;&#xFF08;NVIDIA GTX1070&#xFF09;</h3><p>&#x614E;&#x91CD;&#xFF01;<br>&#x7531;&#x4E8E;&#x5DE5;&#x4F5C;&#x7AD9;&#x4E3B;&#x8981;&#x4EFB;&#x52A1;&#x662F;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#xFF0C;&#x56E0;&#x6B64;&#x91C7;&#x7528;&#x79C1;&#x6709;&#x9A71;&#x52A8;&#x5DF2;&#x83B7;&#x5F97;&#x6700;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#x91C7;&#x7528;&#x5F00;&#x6E90;&#x9A71;&#x52A8;&#x5373;&#x53EF;&#x3002;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S nvidia nvidia-utils</div></pre></td></tr></table></figure></p>
+<p>&#x91CD;&#x542F;&#xFF01;</p>
+<h3 id="&#x5B89;&#x88C5;KDE-Plasma&#x684C;&#x9762;"><a href="#&#x5B89;&#x88C5;KDE-Plasma&#x684C;&#x9762;" class="headerlink" title="&#x5B89;&#x88C5;KDE Plasma&#x684C;&#x9762;"></a>&#x5B89;&#x88C5;KDE Plasma&#x684C;&#x9762;</h3><p>&#x7531;&#x4E8E;&#x914D;&#x7F6E;&#x5145;&#x8DB3;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;KDE&#x5168;&#x5BB6;&#x6876;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S plasma-meta kde-applications-meta kde-l10n-zh_cn kde-l10n-en_gb</div></pre></td></tr></table></figure></p>
+<p>&#x542F;&#x52A8;sddm&#x670D;&#x52A1;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ systemctl <span class="built_in">enable</span> sddm.service</div><div class="line">$ systemctl start sddm.service</div></pre></td></tr></table></figure></p>
+<p>###&#x542F;&#x52A8;&#x7F51;&#x7EDC;&#x670D;&#x52A1;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ systemctl <span class="built_in">enable</span> NetworkManager.service</div><div class="line">$ systemctl start NetworkManager.service</div></pre></td></tr></table></figure></p>
+<h1 id="&#x57FA;&#x7840;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;"><a href="#&#x57FA;&#x7840;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;" class="headerlink" title="&#x57FA;&#x7840;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;"></a>&#x57FA;&#x7840;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;</h1><h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a><a href="http://ohmyz.sh" target="_blank" rel="external">oh-my-zsh</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sh -c <span class="string">&quot;<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x5B57;&#x4F53;"><a href="#&#x5B57;&#x4F53;" class="headerlink" title="&#x5B57;&#x4F53;"></a>&#x5B57;&#x4F53;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S wqy-zenhei wqy-microhei wqy-bitmapfont freetype2</div></pre></td></tr></table></figure>
+<h2 id="&#x7F51;&#x7EDC;"><a href="#&#x7F51;&#x7EDC;" class="headerlink" title="&#x7F51;&#x7EDC;"></a>&#x7F51;&#x7EDC;</h2><p>&#x7531;&#x4E8E;net-tools&#x66FE;&#x5C5E;&#x4E8E;base&#x7EC4;&#x540E;&#x6765;&#x88AB;&#x79FB;&#x9664;&#x4E86;&#xFF0C;&#x5F88;&#x591A;&#x5B9E;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x5DE5;&#x5177;&#x90FD;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5355;&#x72EC;&#x5B89;&#x88C5;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S net-tools</div></pre></td></tr></table></figure></p>
+<h2 id="&#x5B89;&#x88C5;AUR&#x5305;&#x7BA1;&#x7406;&#x5668;"><a href="#&#x5B89;&#x88C5;AUR&#x5305;&#x7BA1;&#x7406;&#x5668;" class="headerlink" title="&#x5B89;&#x88C5;AUR&#x5305;&#x7BA1;&#x7406;&#x5668;"></a>&#x5B89;&#x88C5;AUR&#x5305;&#x7BA1;&#x7406;&#x5668;</h2><blockquote>
+<p>&#x81EA;&#x884C;&#x67E5;&#x770B;<a href="https://wiki.archlinux.org/index.php/AUR_helpers" target="_blank" rel="external">archwiki</a>&#xFF0C;&#x6211;&#x4E60;&#x60EF;&#x7528;yaourt</p>
+</blockquote>
+<h2 id="&#x5B89;&#x88C5;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;"><a href="#&#x5B89;&#x88C5;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;" class="headerlink" title="&#x5B89;&#x88C5;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;"></a>&#x5B89;&#x88C5;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S vlc mplayer</div></pre></td></tr></table></figure>
+<h2 id="&#x5B89;&#x88C5;&#x7F51;&#x6613;&#x4E91;&#x97F3;&#x4E50;"><a href="#&#x5B89;&#x88C5;&#x7F51;&#x6613;&#x4E91;&#x97F3;&#x4E50;" class="headerlink" title="&#x5B89;&#x88C5;&#x7F51;&#x6613;&#x4E91;&#x97F3;&#x4E50;"></a>&#x5B89;&#x88C5;&#x7F51;&#x6613;&#x4E91;&#x97F3;&#x4E50;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S netease-cloud-music</div></pre></td></tr></table></figure>
+<h2 id="&#x5B89;&#x88C5;&#x8F93;&#x5165;&#x6CD5;"><a href="#&#x5B89;&#x88C5;&#x8F93;&#x5165;&#x6CD5;" class="headerlink" title="&#x5B89;&#x88C5;&#x8F93;&#x5165;&#x6CD5;"></a>&#x5B89;&#x88C5;&#x8F93;&#x5165;&#x6CD5;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pacman -S fcitx fcitx-rime fcitx-configtool fcitx-gtk2 fcitx-gtk3 fcitx-qt4 fcitx-qt5 kcm-fcitx</div></pre></td></tr></table></figure>
+<p>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/environment</div><div class="line"></div><div class="line">&#x8FFD;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;</div><div class="line">GTK_IM_MODULE=fcitx</div><div class="line">QT_IM_MODULE=fcitx</div><div class="line">XMODIFIERS=@im=fcitx</div></pre></td></tr></table></figure></p>
+<h1 id="&#x540E;&#x8BB0;"><a href="#&#x540E;&#x8BB0;" class="headerlink" title="&#x540E;&#x8BB0;"></a>&#x540E;&#x8BB0;</h1><p>&#x6B64;&#x65F6;&#x684C;&#x9762;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x53EF;&#x89C1;GPU&#x79C1;&#x6709;&#x9A71;&#x52A8;&#x5DF2;&#x88AB;&#x5B8C;&#x7F8E;&#x5B89;&#x88C5;&#xFF0C;&#x800C;&#x4E14;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x8FD0;&#x884C;&#x826F;&#x597D;&#x3002;&#xFF08;&#x5FFD;&#x7565;&#x4E71;&#x5165;&#x7684;i3wm&#xFF09;</p>
+<p><img src="/2017/10/04/ArchLinux-installation-note/arch.png" alt="&#x5B89;&#x88C5;&#x5B8C;&#x6548;&#x679C;&#x56FE;"></p>
+<p>&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x914D;&#x7F6E;&#x89C1;&#x914D;&#x7F6E;&#x7BC7;</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArchLinux/" rel="tag"># ArchLinux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/22/Tag-Plugin/" rel="next" title="Hexo内置标签的使用">
+                <i class="fa fa-chevron-left"></i> Hexo内置标签的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/DesignMark/" rel="prev" title="设・记">
+                设・记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="wangchi" />
+            
+              <p class="site-author-name" itemprop="name">wangchi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/moonfoam" title="GitHub &rarr; https://github.com/moonfoam" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:wangchi1995@gmail.com" title="E-Mail &rarr; mailto:wangchi1995@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装计划"><span class="nav-number">2.</span> <span class="nav-text">安装计划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#当前硬件"><span class="nav-number">2.1.</span> <span class="nav-text">当前硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬盘规划"><span class="nav-number">2.2.</span> <span class="nav-text">硬盘规划</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前期"><span class="nav-number">3.</span> <span class="nav-text">前期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">3.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-number">3.2.</span> <span class="nav-text">分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装系统"><span class="nav-number">4.</span> <span class="nav-text">安装系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择镜像源"><span class="nav-number">4.1.</span> <span class="nav-text">选择镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础包"><span class="nav-number">4.2.</span> <span class="nav-text">安装基础包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置系统"><span class="nav-number">4.3.</span> <span class="nav-text">配置系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成fstab"><span class="nav-number">4.3.1.</span> <span class="nav-text">生成fstab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入系统"><span class="nav-number">4.3.2.</span> <span class="nav-text">进入系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑时区信息"><span class="nav-number">4.3.3.</span> <span class="nav-text">编辑时区信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置语言环境"><span class="nav-number">4.3.4.</span> <span class="nav-text">设置语言环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主机名"><span class="nav-number">4.3.5.</span> <span class="nav-text">设置主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置root密码"><span class="nav-number">4.3.6.</span> <span class="nav-text">设置root密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装启动引导"><span class="nav-number">4.3.7.</span> <span class="nav-text">安装启动引导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建用户"><span class="nav-number">4.3.8.</span> <span class="nav-text">新建用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桌面"><span class="nav-number">4.4.</span> <span class="nav-text">桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xorg框架"><span class="nav-number">4.4.1.</span> <span class="nav-text">xorg框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显卡驱动（NVIDIA-GTX1070）"><span class="nav-number">4.4.2.</span> <span class="nav-text">显卡驱动（NVIDIA GTX1070）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装KDE-Plasma桌面"><span class="nav-number">4.4.3.</span> <span class="nav-text">安装KDE Plasma桌面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础软件安装"><span class="nav-number">5.</span> <span class="nav-text">基础软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-zsh"><span class="nav-number">5.1.</span> <span class="nav-text">oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">5.2.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络"><span class="nav-number">5.3.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装AUR包管理器"><span class="nav-number">5.4.</span> <span class="nav-text">安装AUR包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装视频播放器"><span class="nav-number">5.5.</span> <span class="nav-text">安装视频播放器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装网易云音乐"><span class="nav-number">5.6.</span> <span class="nav-text">安装网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装输入法"><span class="nav-number">5.7.</span> <span class="nav-text">安装输入法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">浙ICP备18055858号 </a>&copy; 2016 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangchi</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'fnSxlsUguaLDIpnr6devFUyT-gzGzoHsz',
+        appKey: '1WRdm2QH9s8OD4yxaGWrVXq0',
+        placeholder: 'Oh,I find a timemachine!',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script type="text/javascript">pangu.spacingPage();</script>
+
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.6.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.6.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
